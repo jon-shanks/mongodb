@@ -1,0 +1,129 @@
+{
+  "name": "puppetlabs-mongodb",
+  "version": "0.5.0",
+  "summary": "mongodb puppet module",
+  "author": "puppetlabs",
+  "description": "10gen mongodb puppet module",
+  "dependencies": [
+    {
+      "name": "puppetlabs/apt",
+      "version_requirement": "\u003e\u003d 1.0.0"
+    },
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": "\u003e\u003d 2.2.0"
+    }
+  ],
+  "types": [
+    {
+      "properties": [
+        {
+          "name": "roles",
+          "doc": "The user\u0027s roles."
+        },
+        {
+          "name": "password_hash",
+          "doc": "The password hash of the user. Use mongodb_password() for creating hash."
+        }
+      ],
+      "parameters": [
+        {
+          "name": "name",
+          "doc": "The name of the user."
+        },
+        {
+          "name": "database",
+          "doc": "The user\u0027s target database."
+        },
+        {
+          "name": "tries",
+          "doc": "The maximum amount of two second tries to wait MongoDB startup."
+        }
+      ],
+      "providers": [
+        {
+          "name": "mongodb",
+          "doc": "Manage users for a MongoDB database."
+        }
+      ],
+      "name": "mongodb_user",
+      "doc": "Manage a MongoDB user. This includes management of users password as well as privileges."
+    },
+    {
+      "parameters": [
+        {
+          "name": "name",
+          "doc": "The name of the database."
+        },
+        {
+          "name": "tries",
+          "doc": "The maximum amount of two second tries to wait MongoDB startup."
+        }
+      ],
+      "providers": [
+        {
+          "name": "mongodb",
+          "doc": "Manages MongoDB database."
+        }
+      ],
+      "name": "mongodb_database",
+      "doc": "Manage MongoDB databases."
+    }
+  ],
+  "checksums": {
+    ".bundle/config": "7f1c988748783d2a8d455376eed1470c",
+    ".bundle/install.log": "c4a76abd3e05067c6f7a6de120f9ac7c",
+    ".fixtures.yml": "d9586415bbdade904c869b5dcd83045c",
+    ".forge-release/pom.xml": "c650a84961ad88de03192e23b63b3549",
+    ".forge-release/publish": "1c1d6dd64ef52246db485eb5459aa941",
+    ".forge-release/settings.xml": "06d768a57d582fe1ee078b563427e750",
+    ".forge-release/validate": "7fffde8112f42a1ec986d49ba80ac219",
+    ".nodeset.yml": "f2b857f9fc7a701ff118e28591c12925",
+    ".travis.yml": "fbe4e7d4e1a801bbca5c4a9ab89f81fd",
+    "CHANGELOG": "5f66955b867f38eabe036af074810f40",
+    "Gemfile": "9ed4e2f4cfc1722bf8983483cb7e40d3",
+    "Gemfile.lock": "556bfb30e58856ac3f0b9cdc1493315f",
+    "LICENSE": "b3f8a01d8699078d82e8c3c992307517",
+    "Modulefile": "32f4d025481d43d7cc99bd79e98a7144",
+    "README.md": "bb1874e6458531c4484665c798aa448f",
+    "Rakefile": "0428ea3759a4692c91604396c406a9c1",
+    "lib/puppet/parser/functions/mongodb_password.rb": "34c8532f5f22156efc24c37363d64037",
+    "lib/puppet/provider/mongodb_database/mongodb.rb": "43eba4b9d275d4d8f6db381904ccf5a2",
+    "lib/puppet/provider/mongodb_user/mongodb.rb": "4b58a30db52f75957e4f0f3c11098ab9",
+    "lib/puppet/type/mongodb_database.rb": "4e7bae96f9f5160bf2a1d16bd7ff6789",
+    "lib/puppet/type/mongodb_user.rb": "4fbc2fa74fdacf0604ccae17a070ab59",
+    "manifests/db.pp": "b1227e3632fbaa66ca823cacfdb285c3",
+    "manifests/globals.pp": "cfce66698235aef7a087b0efac8df7e6",
+    "manifests/init.pp": "8bddd04ad2e8355b17261684f24fe517",
+    "manifests/params.pp": "cdd441f8b21c4e1fb265d874a2e259d2",
+    "manifests/repo.pp": "442fbe043f0917b15bba091b35a5a4dd",
+    "manifests/repo/apt.pp": "48d743d84f982e14c28afe5039d385f5",
+    "manifests/repo/yum.pp": "4587b7a71df31738ec580d1b7dcb2eb0",
+    "manifests/server.pp": "75c649e90d86ed6dca53c88db8c36be1",
+    "manifests/server/config.pp": "bd14a132dc4367d71a43dbd0d6d113e7",
+    "manifests/server/install.pp": "f7b3032ea88c0cdef326973f1309717e",
+    "manifests/server/service.pp": "75494e6aee474b600810efdc94cf427e",
+    "spec/classes/repo_spec.rb": "cd5e2bc18b61418d915ea31579d93c0c",
+    "spec/classes/server_config_spec.rb": "fb661c46ff8740edecaa6abd3e5367e8",
+    "spec/classes/server_install_spec.rb": "f281a0570fca2d0dce19cc36a6fb9b21",
+    "spec/classes/server_spec.rb": "a7b3c5226ba994ac27397d3272e165bf",
+    "spec/defines/db_spec.rb": "a94ff83eef293df563ccc45e4b57d200",
+    "spec/spec_helper.rb": "0db89c9a486df193c0e40095422e19dc",
+    "spec/spec_helper_system.rb": "0e2c886ed3570f4491401a0ceccdf762",
+    "spec/system/basic_spec.rb": "0a5b33d18254bedcb7886e34846ebff6",
+    "spec/system/server_10gen_spec.rb": "6e6d4de140f876357bf5380630fb8ba8",
+    "spec/system/server_distro_spec.rb": "c34c1f7b370965ae10ae99dce70d5ad1",
+    "spec/unit/mongodb_password_spec.rb": "99b0d4889eab6459497bad433d7324d2",
+    "spec/unit/puppet/provider/mongodb_database/mongodb_spec.rb": "cfd018de2a8e57fb1a6b4156ac886456",
+    "spec/unit/puppet/provider/mongodb_user/mongodb_spec.rb": "22601ab80d563f76a961aa184b4cf378",
+    "spec/unit/puppet/type/mongodb_database_spec.rb": "83ce664b2bf815aa4cb734639d9cdc7b",
+    "spec/unit/puppet/type/mongodb_user_spec.rb": "990821a7129e58ca45f549d7755d278b",
+    "templates/mongodb.conf.erb": "158f02c01cdb7e0c08c62d912e0e58bf",
+    "tests/globals.pp": "1b274b3a5fe7d2347f2f70f285dd7518",
+    "tests/init.pp": "9a09da130383dc0c05eded5ef0744876",
+    "tests/server.pp": "d4d798edd9e35c283d006d01f6e82f56"
+  },
+  "source": "git@github.com:puppetlabs/puppetlabs-mongodb.git",
+  "project_page": "https://github.com/puppetlabs/puppetlabs-mongodb",
+  "license": "Apache License Version 2.0"
+}
